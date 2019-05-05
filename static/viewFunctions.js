@@ -28,8 +28,17 @@ function sendBackend() {
     });
 }
 
+function qString() {
+  val = document.getElementById('q_val').value;
+  let params = {'content' : val};
+  let queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+
+  window.location = '/qstring?' + queryString; 
+}
+
 function addEventListeners() {
   document.getElementById('submit').addEventListener('click', sendBackend);
+  document.getElementById('q_submit').addEventListener('click', qString);
 }
 
 addEventListeners();

@@ -13,16 +13,23 @@
         <button id="submit">Submit</button>
     </div>
     <div style="margin-bottom: 2vh;">
-      Method 2: Forms (specific)
       <form action="/input" method="post">
+        Method 2: Forms (specific)
         <input type="text" name="valform"></input>
         <input type="submit" value="Submit"></input>
       </form>
     </div>
     <div>
+      Method 3: Query String (no database changes)
+      <input type="text" id="q_val"></input>
+      <button id="q_submit">Submit</button>
+    </div>
+
+    <div>
       Response Data from Method 1:
       <div id="res"></div>
     </div>
+
   </div>
 </body>
 

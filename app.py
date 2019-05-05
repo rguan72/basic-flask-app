@@ -40,3 +40,16 @@ def receive_form():
         conn.commit()
 
     return ('', 204)
+
+@app.route('/qstring', methods=['GET'])
+def qstring():
+    print("The request is being sent to: ", request.url)
+    x = request.args['content']
+    print(f"The data in the input box is: {x}")
+
+    # render template, passing variable: jinja2 feature
+    return render_template("qstring.html", val=x)
+# custom urls
+@app.route('/user/id/<int:user_id>')
+def show_uid(user_id):
+    return f'The user id is {user_id}'
