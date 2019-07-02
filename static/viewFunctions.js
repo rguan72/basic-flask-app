@@ -18,14 +18,13 @@ function sendBackend() {
   }
 
   fetch('/receive_json', req)
-    .then((res) => {
-      res.json()
-        .then((res_json) => {
-          if (res_json['method'] === "json_sent") {
-            document.getElementById('res').innerHTML = res_json['data'];
-          }
-        });
+    .then(res => res.json())
+    .then((res_json) => {
+      if (res_json['method'] === "json_sent") {
+        document.getElementById('res').innerHTML = res_json['data'];
+      }
     });
+  });
 }
 
 function qString() {
